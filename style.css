@@ -1,0 +1,254 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap");
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background: var(--background);
+  font-family: sofia-pro;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* CSS Variables */
+
+:root {
+  --color-white: hsla(0, 0%, 100%, 1);
+  --background: hsl(180, 60%, 98%);
+  --grey-1: hsla(0, 0%, 45%, 1);
+  --grey-2: hsla(0, 0%, 65%, 1);
+  --grey-3: hsla(0, 0%, 94%, 1);
+  --green: hsla(174, 62%, 47%, 1);
+  --text-heading: hsla(208, 96%, 10%, 1);
+}
+
+/* Main Fonts */
+@font-face {
+  font-family: sofia-pro;
+  src: url(assets/fonts/sofiapro-light.otf);
+}
+
+/* Main Css*/
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 180px;
+  padding-block: 81px;
+}
+
+.content-left {
+  margin-block-start: 124px;
+
+  & h1 {
+    padding-block-end: 20px;
+    font-family: "Outfit", sans-serif;
+    font-size: 2.5rem;
+    line-height: 50px;
+    font-weight: 700;
+    letter-spacing: -0.8px;
+  }
+
+  & p {
+    width: 427px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--grey-1);
+    font-family: "Outfit", sans-serif;
+    line-height: 25px;
+  }
+
+  & .logo {
+    margin-block-end: 25px;
+  }
+}
+
+.right {
+  & .card {
+    width: 580px;
+    background: var(--color-white);
+    box-shadow: 0px 4px 50px 0px rgba(4, 8, 19, 0.1);
+    border-radius: 6px;
+    padding-block: 40px;
+    padding-inline: 40px;
+  }
+
+  & .input-box-row {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  & .input-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-block-end: 30px;
+    position: relative;
+
+    & input[type="submit"] {
+      background: var(--green);
+      color: var(--color-white);
+      font-weight: 900;
+    }
+
+    & label {
+      margin-block-end: 10px;
+      font-weight: 900;
+      font-size: 0.875rem;
+    }
+
+    & i {
+      position: absolute;
+      top: 45px;
+      right: 20px;
+      color: var(--grey-2);
+    }
+
+    & select {
+      background: var(--color-white);
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      color: var(--grey-1);
+    }
+
+    & input,
+    select {
+      height: 48px;
+      font-size: 0.875rem;
+      font-style: normal;
+      padding-inline: 16px;
+      border: 1px solid var(--grey-3);
+      border-radius: 2px;
+      outline: none;
+    }
+
+    & input:focus,
+    select:focus {
+      border: 2px solid var(--green);
+    }
+
+    & .active {
+      outline: 2px solid var(--grey-3);
+      border: 1px solid var(--green);
+      border-radius: 4px;
+    }
+  }
+
+  & .agreement {
+    font-size: 0.875rem;
+    text-align: center;
+    font-weight: 900;
+    padding-block-start: 16px;
+
+    > a {
+      color: var(--green);
+    }
+  }
+}
+
+.btn {
+  width: 100%;
+  background: var(--green);
+  color: var(--color-white);
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  height: 48px;
+  border: none;
+  /* padding-block: 16px; */
+}
+
+.mobile-text {
+  display: none;
+}
+/*Media Query*/
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    padding-block: 30px;
+    padding-inline: 24px;
+    gap: 30px;
+  }
+
+  .right {
+    & .card {
+      width: 100%;
+      padding-block: 24px;
+      margin-block-end: 24px;
+      padding-inline: 16px;
+    }
+
+    & .input-box-row {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    & .input-box {
+      margin-block-end: 24px;
+    }
+  }
+
+  .content-left {
+    margin-block-start: 0px;
+    font-weight: 900;
+
+    & h1 {
+      font-size: 1.875rem;
+      padding-block-end: 5px;
+    }
+
+    & p {
+      width: 100%;
+      font-weight: 300;
+    }
+
+    & .logo {
+      width: 70px;
+      aspect-ratio: 1/1;
+    }
+  }
+
+  .text-laptop {
+    display: none;
+  }
+
+  .mobile-text {
+    display: block;
+  }
+}
